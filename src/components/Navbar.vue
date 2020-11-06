@@ -22,7 +22,10 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
+            Catch
+          </router-link>
+          <router-link :to="{ name: 'MyPokemon' }" class="nav-link">
+            My Pokemon
           </router-link>
         </li>
       </ul>

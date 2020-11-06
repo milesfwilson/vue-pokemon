@@ -22,6 +22,15 @@ class AllPokemonService {
       console.error(error)
     }
   }
+
+  async catchPokemon(pokemon) {
+    try {
+      AppState.myPokemon.push(pokemon)
+      console.log(AppState.myPokemon)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 
 export const allPokemonService = new AllPokemonService()

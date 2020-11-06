@@ -21,7 +21,7 @@
             <img :src="activePokemon.sprites.back_shiny" class="grow" alt="">
           </div>
           <img :src="activePokemon.sprites.other.dream_world.front_default" class="grow" alt="">
-          <button class="btn bg-transparent my-2 grow">
+          <button class="btn bg-transparent my-2 grow" @click="catchPokemon(activePokemon)">
             <i class="fa fa-plus-circle fa-2x text-dark" aria-hidden="true"></i>
           </button>
         </div>
@@ -42,7 +42,11 @@ export default {
     const route = useRoute()
     onMounted(() => { allPokemonService.getActive(route.params.pokemonName) })
     return {
-      activePokemon: computed(() => AppState.activePokemon)
+      activePokemon: computed(() => AppState.activePokemon),
+      catchPokemon() {
+        allPokemonService.catchPokemon(AppState.activePokemon)
+      }
+
     }
   },
   components: {}
